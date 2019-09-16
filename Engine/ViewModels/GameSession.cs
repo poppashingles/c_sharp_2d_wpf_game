@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Engine.Factories;
 using Engine.Models;
 
 namespace Engine.ViewModels
@@ -11,6 +12,7 @@ namespace Engine.ViewModels
     {
         public Player CurrentPlayer { get; set; }
         public Location CurrentLocation { get; set; }
+        public World CurrentWorld { get; set; }
 
         public GameSession()
         {
@@ -28,6 +30,9 @@ namespace Engine.ViewModels
             CurrentLocation.YCoordinate = -1;
             CurrentLocation.Description = "This is your house";
             CurrentLocation.ImageName = "/Engine;component/Images/Locations/Home.png";
+
+            WorldFactory factory = new WorldFactory();
+            CurrentWorld = factory.CreateWorld();
         }
     }
 }
