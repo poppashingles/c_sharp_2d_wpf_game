@@ -31,7 +31,7 @@ namespace Engine.Factories
 
             newWorld.AddLocation(0, 2, "Herbalist's Garden", "There are many plants here, with snakes hiding behind them.", "/Engine;component/Images/Locations/HerbalistsGarden.png");
 
-            return new World();
+            return newWorld;
         }
     }
 }
