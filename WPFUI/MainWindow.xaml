@@ -176,39 +176,22 @@
                 <ColumnDefinition Width="255" />
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Row="0" Grid.Column="1">
-
+            <Grid Grid.Row="0" Grid.Column="0" Visibility="{Binding HasMonster, Converter={StaticResource BooleanToVisiblity}}" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="50" />
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Row="0" Grid.Column="1" Content="North"/>
-                <Button Grid.Row="1" Grid.Column="0" Content="West"/>
-                <Button Grid.Row="1" Grid.Column="2" Content="East"/>
-                <Button Grid.Row="2" Grid.Column="1" Content="South"/>
+                <ComboBox Grid.Row="0" Grid.Column="0" ItemsSource="{Binding CurrentPlayer.Weapons}" SelectedItem="{Binding CurrentWeapon}" DisplayMemberPath="Name" SelectedValuePath="ID" />
 
+                <Button Grid.Row="0" Grid.Column="2" Content="Use" Click="OnClick_AttackMonster" />
             </Grid>
-
-        </Grid>
-
-        <Grid Grid.Row="2" Grid.Column="1" Background="Lavender">
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="255" />
-            </Grid.ColumnDefinitions>
 
             <Grid Grid.Row="0" Grid.Column="1">
 
